@@ -1,9 +1,10 @@
-let title = '';
-let screens = '';
-let screenPrice = '';
-let roolback = '';
-let fullPrice = '';
-let adaptive = '';
+let title;
+let screens;
+let screenPrice;
+let roolback;
+let fullPrice;
+let adaptive;
 
-alert('Hello World!');
+
+alert('Hello World!')
 console.log('Hello World!')
