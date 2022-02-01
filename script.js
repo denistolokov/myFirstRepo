@@ -12,6 +12,16 @@ let servicePrice2 = +prompt('Сколько это будет стоить?');
 let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 let servicePercentPrice = Math.ceil(fullPrice * (rollback / 100));
 
+if (fullPrice >= 30000) {
+    alert('Даём скидку в 10%');
+} else if (fullPrice >= 15000 && fullPrice < 30000) {
+    alert('Даём скидку в 5%');
+} else if (fullPrice < 15000 && fullPrice > 0) {
+    alert('Скидка не предусмотрена');
+} else if (fullPrice <= 0) {
+    alert('Что-то пошло не так');
+}
+
 console.log(title);
 console.log(screens);
 console.log(screenPrice);
@@ -22,13 +32,3 @@ console.log(service2);
 console.log(servicePrice2);
 console.log(fullPrice);
 console.log(servicePercentPrice);
-
-if (fullPrice >= 30000) {
-    alert('Даём скидку в 10%');
-} else if (fullPrice >= 15000 && fullPrice < 30000) {
-    alert('Даём скидку в 5%');
-} else if (fullPrice < 15000 && fullPrice > 0) {
-    alert('Скидка не предусмотрена');
-} else if (fullPrice <= 0) {
-    alert('Что-то пошло не так');
-}
