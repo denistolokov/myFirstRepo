@@ -1,22 +1,23 @@
-let title = "My first project";
-let screens = "Простые, Сложные, Интерективные";
-screens = screens.toLowerCase().split(',');
+'use strict';
 
-let screenPrice = 1000;
+let title = prompt('Как называется ваш проект');
+let screens = prompt('Простые, Сложные, Интерективные');
+let screenPrice = prompt('Сколько будет стоить данная работа');
 let rollback = 15;
-let fullPrice = 10000;
-let adaptive = true;
-
-
-console.log(typeof title);
-console.log(typeof fullPrice);
-console.log(typeof adaptive);
-console.log(screens.length);
-
-console.log("Стоимость верстки экранов " + screenPrice + " рублей");
-console.log("стоимость разработки сайта " + fullPrice + " рублей")
-//процент посреднику
-console.log(fullPrice * (rollback / 100));
-console.log(screens)
-
+let adaptive = confirm('Нужен ли адвптив на сайте');
+let service1 = prompt('Какой дополнительный тип услуги нужен?');
+let servicePrice1 = prompt('Сколько это будет стоить?');
+let service2 = prompt('Какой дополнительный тип услуги нужен?');
+let servicePrice2 = prompt('Сколько это будет стоить?');
+let fullPrice = screenPrice + servicePrice1 + servicePrice2;
+let servicePercentPrice = fullPrice - (rollback / 100);
+console.log(title);
 console.log(screens);
+console.log(screenPrice);
+console.log(adaptive);
+console.log(service1);
+console.log(servicePrice1);
+console.log(service2);
+console.log(servicePrice2);
+console.log(fullPrice);
+console.log(servicePercentPrice);
