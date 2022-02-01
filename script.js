@@ -11,6 +11,16 @@ let service2 = prompt('Какой дополнительный тип услуг
 let servicePrice2 = +prompt('Сколько это будет стоить?');
 let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 let servicePercentPrice = Math.ceil(fullPrice * (rollback / 100));
+let allServicePrices;
+
+//const getAllServicePrices = function (servicePrice1, servicePrice2) {
+//    allServicePrices = servicePrice1 + servicePrice2
+//}
+const getAllServicePrices = function (allServicePrices) {
+    return servicePrice1 + servicePrice2;
+}
+
+allServicePrices = getAllServicePrices(allServicePrices);
 
 if (fullPrice >= 30000) {
     alert('Даём скидку в 10%');
@@ -22,13 +32,13 @@ if (fullPrice >= 30000) {
     alert('Что-то пошло не так');
 }
 
-console.log(title);
-console.log(screens);
-console.log(screenPrice);
-console.log(adaptive);
-console.log(service1);
-console.log(servicePrice1);
-console.log(service2);
-console.log(servicePrice2);
-console.log(fullPrice);
-console.log(servicePercentPrice);
+//console.log(title);
+//console.log(screens);
+//console.log(screenPrice);
+//console.log(adaptive);
+//console.log(service1);
+//console.log(servicePrice1);
+//console.log(service2);
+//console.log(servicePrice2);
+//console.log(fullPrice);
+//console.log(servicePercentPrice);
