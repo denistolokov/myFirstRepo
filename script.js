@@ -18,3 +18,5 @@ console.log("стоимость разработки сайта " + fullPrice + 
 //процент посреднику
 console.log(fullPrice * (rollback / 100));
 console.log(screens)
+
+console.log(screens);
