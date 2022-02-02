@@ -13,24 +13,21 @@ let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 let servicePercentPrice = Math.ceil(fullPrice * (rollback / 100));
 let allServicePrices;
 
-const getAllServicePrices = function (a, b) {
-    return a + b;
-}
-allServicePrices = getAllServicePrices(servicePrice1, servicePrice2);
-
-function getFullPrice(a, b) {
-    return a + b;
-}
-fullPrice = getFullPrice(screenPrice, allServicePrices);
-
-function getTitle(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+const getAllServicePrices = function () {
+    return servicePrice1 + servicePrice2;
 }
 
-const getServicePercentPrices = function (fullPrice, servicePercentPrice) {
-    return Math.ceil(fullPrice - servicePercentPrice);
+function getFullPrice() {
+    return screenPrice + allServicePrices;
 }
-servicePercentPrice = getServicePercentPrices(fullPrice, servicePercentPrice);
+
+const getTitle = function () {
+    return title.trim()[0].toUpperCase() + title.trim().substr(1).toLowerCase();
+}
+
+const getServicePercentPrices = function () {
+    return fullPrice - (fullPrice * (rollback / 100));
+}
 
 const showTypeof = function (variable) {
     console.log(variable, typeof variable);
@@ -48,14 +45,19 @@ const getRollbackMessage = function (price) {
     }
 }
 
+allServicePrices = getAllServicePrices(servicePrice1, servicePrice2);
+fullPrice = getFullPrice(screenPrice, allServicePrices);
+servicePercentPrice = getServicePercentPrices(fullPrice, servicePercentPrice);
+title = getTitle();
+
 showTypeof(title);
 showTypeof(screenPrice);
 showTypeof(adaptive);
 
 console.log(screens);
 console.log(getRollbackMessage(fullPrice));
-console.log(getServicePercentPrices());
-console.log(servicePercentPrice);
+console.log(getServicePercentPrices(servicePercentPrice));
+//console.log(servicePercentPrice);
 //console.log(allServicePrices);
 //console.log(title);
 //console.log(screenPrice);
