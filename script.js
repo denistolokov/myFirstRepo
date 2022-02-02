@@ -13,27 +13,51 @@ let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 let servicePercentPrice = Math.ceil(fullPrice * (rollback / 100));
 let allServicePrices;
 
-//const getAllServicePrices = function (servicePrice1, servicePrice2) {
-//    allServicePrices = servicePrice1 + servicePrice2
-//}
-const getAllServicePrices = function (allServicePrices) {
-    return servicePrice1 + servicePrice2;
+const getAllServicePrices = function (a, b) {
+    return a + b;
+}
+allServicePrices = getAllServicePrices(servicePrice1, servicePrice2);
+
+function getFullPrice(a, b) {
+    return a + b;
+}
+fullPrice = getFullPrice(screenPrice, allServicePrices);
+
+function getTitle(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
-allServicePrices = getAllServicePrices(allServicePrices);
+const getServicePercentPrices = function (fullPrice, servicePercentPrice) {
+    return Math.ceil(fullPrice - servicePercentPrice);
+}
+servicePercentPrice = getServicePercentPrices(fullPrice, servicePercentPrice);
 
-if (fullPrice >= 30000) {
-    alert('Даём скидку в 10%');
-} else if (fullPrice >= 15000 && fullPrice < 30000) {
-    alert('Даём скидку в 5%');
-} else if (fullPrice < 15000 && fullPrice > 0) {
-    alert('Скидка не предусмотрена');
-} else if (fullPrice <= 0) {
-    alert('Что-то пошло не так');
+const showTypeof = function (variable) {
+    console.log(variable, typeof variable);
 }
 
+const getRollbackMessage = function (price) {
+    if (price >= 30000) {
+        return 'Даём скидку в 10%';
+    } else if (price >= 15000 && price < 30000) {
+        return 'Даём скидку в 5%';
+    } else if (price < 15000 && price > 0) {
+        return 'Скидка не предусмотрена';
+    } else if (price <= 0) {
+        return 'Что-то пошло не так';
+    }
+}
+
+showTypeof(title);
+showTypeof(screenPrice);
+showTypeof(adaptive);
+
+console.log(screens);
+console.log(getRollbackMessage(fullPrice));
+console.log(getServicePercentPrices());
+console.log(servicePercentPrice);
+//console.log(allServicePrices);
 //console.log(title);
-//console.log(screens);
 //console.log(screenPrice);
 //console.log(adaptive);
 //console.log(service1);
@@ -41,4 +65,3 @@ if (fullPrice >= 30000) {
 //console.log(service2);
 //console.log(servicePrice2);
 //console.log(fullPrice);
-//console.log(servicePercentPrice);
