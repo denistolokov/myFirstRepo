@@ -12,17 +12,15 @@ let service1;
 let service2;
 
 const isNumber = function (num) {
-    return !isNaN(parseFloat(num)) && isFinite(num)
+    return !isNaN(parseFloat(num)) && isFinite(num);
 }
 
 const asking = function () {
-    title = prompt("Как называется ваш проект", "Калькулятор верстки")
-    screens = prompt("Простые, Сложные, Интерективные", "Простые, сложные")
-
-    screenPrice = +prompt('Сколько будет стоить данная работа');
+    title = prompt("Как называется ваш проект", "Калькулятор верстки");
+    screens = prompt("Простые, Сложные, Интерективные", "Простые, сложные");
 
     do {
-        screenPrice = +prompt('Сколько будет стоить данная работа')
+        screenPrice = +prompt('Сколько будет стоить данная работа');
     } while (!isNumber(screenPrice));
 
     adaptive = confirm('Нужен ли адвптив на сайте');
@@ -39,11 +37,10 @@ const getAllServicePrices = function () {
             service2 = prompt('Какой дополнительный тип услуги нужен?');
         }
 
-        sum += +prompt('Сколько это будет стоить?')
+        do {
+            sum += +prompt('Сколько это будет стоить?');
+        } while (!isNumber(sum));
 
-        while (!isNumber(sum)) {
-            sum += +prompt('Сколько это будет стоить?')
-        }
     }
 
     return sum
@@ -91,7 +88,7 @@ showTypeof(allServicePrices);
 console.log("allServicePrices", allServicePrices);
 console.log(screens);
 console.log(getRollbackMessage(fullPrice));
-console.log(getServicePercentPrices(servicePercentPrice));
+console.log(getServicePercentPrices());
 //console.log(servicePercentPrice);
 //console.log(allServicePrices);
 //console.log(title);
