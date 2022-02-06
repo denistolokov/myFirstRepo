@@ -17,6 +17,14 @@ const gameBot = function () {
         if (userNumber < 1 || userNumber > 100 || userNumber === isNumber) {
             randomNumber();
         }
+        else if (userNumber > mainNumber) {
+            alert("Загаданное число больше");
+            randomNumber();
+        }
+        else if (userNumber < mainNumber) {
+            alert("Загаданное число менише");
+            randomNumber();
+        }
 
         return userNumber;
 
