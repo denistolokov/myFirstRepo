@@ -14,7 +14,16 @@ const gameBot = function () {
     function randomNumber() {
         userNumber = +prompt("Угадай число от 1 до 100");
 
-        if (userNumber < 1 || userNumber > 100 || userNumber === isNumber) {
+        if (userNumber === null) {
+            alert("Игра окончена");
+        }
+
+        if (!isNumber(userNumber)) {
+            alert("Введи число!");
+            randomNumber();
+        }
+
+        if (userNumber < 1 || userNumber > 100) {
             randomNumber();
         }
         else if (userNumber > mainNumber) {
@@ -22,8 +31,11 @@ const gameBot = function () {
             randomNumber();
         }
         else if (userNumber < mainNumber) {
-            alert("Загаданное число менише");
+            alert("Загаданное число меньше");
             randomNumber();
+        }
+        else if (userNumber = mainNumber) {
+            alert("Поздравляю, Вы угадали!!!");
         }
 
         return userNumber;
@@ -37,20 +49,38 @@ gameBot();
 
 console.log(userNumber);
 
-// function one(x) {
-//     function two() {
-//         const a = +prompt("Введите число");
-//         x--;
+// let min = Math.ceil(1);
+// let max = Math.floor(100);
 
-//         console.log(a);
-//         console.log(x);
+// var number = Math.floor(Math.random() * (max - min)) + min
+// console.log(number);
 
-//         if (a !== x) {
-//             two();
+// function start() {
+
+//     while (true) {
+
+//         let userNumber = prompt('Enter the number');
+//         console.log(typeof (parseInt(userNumber)));
+
+//         if (isNaN(userNumber)) {
+//             alert('Enter please number');
+//             continue;
+//         }
+
+//         if (userNumber === null) {
+//             alert('Bye bye :)');
+//             break;
+//         }
+
+//         if (parseInt(userNumber) === number) {
+//             alert('You win');
+//             break;
+//         } else if (parseInt(userNumber) > number) {
+//             alert('Your number more');
+//         } else if (parseInt(userNumber) < number) {
+//             alert('Your number less');
 //         }
 //     }
-
-//     two()
 // }
 
-// one(10);
+// start();
