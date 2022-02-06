@@ -52,33 +52,32 @@ console.log(userNumber);
 // let min = Math.ceil(1);
 // let max = Math.floor(100);
 
-// var number = Math.floor(Math.random() * (max - min)) + min
+// let number = Math.floor(Math.random() * (max - min)) + min
 // console.log(number);
 
 // function start() {
 
 //     while (true) {
 
-//         let userNumber = prompt('Enter the number');
-//         console.log(typeof (parseInt(userNumber)));
+//         let userNumber = prompt("Угадай число от 1 до 100"');
 
 //         if (isNaN(userNumber)) {
-//             alert('Enter please number');
+//             alert("Введи число!!!");
 //             continue;
 //         }
 
 //         if (userNumber === null) {
-//             alert('Bye bye :)');
+//             alert("Игра окончена");
 //             break;
 //         }
 
 //         if (parseInt(userNumber) === number) {
-//             alert('You win');
+//             alert("Поздравляю, Вы угадали");
 //             break;
 //         } else if (parseInt(userNumber) > number) {
-//             alert('Your number more');
+//             alert("Загаданное число больше");
 //         } else if (parseInt(userNumber) < number) {
-//             alert('Your number less');
+//             alert("Загаданное число меньше");
 //         }
 //     }
 // }
