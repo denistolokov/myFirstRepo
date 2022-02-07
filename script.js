@@ -15,8 +15,7 @@ const gameBot = function () {
             alert("Введи число!");
             randomNumber();
         }
-
-        if (userNumber === null) {
+        else if (confirm(userNumber) === false) {
             alert("Игра окончена");
         }
         else if (userNumber < 1 || userNumber > 100) {
