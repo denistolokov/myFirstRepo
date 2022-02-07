@@ -11,6 +11,8 @@ let allServicePrices;
 let service1;
 let service2;
 
+const addData;
+
 const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
 }
