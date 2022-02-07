@@ -14,7 +14,7 @@ const gameBot = function () {
 
         if (userNumber === 0) {
             alert("Игра окончена");
-            return userNumber;
+            return;
         }
         else if (!isNumber(userNumber)) {
             alert("Введи число!");
