@@ -1,5 +1,9 @@
 'use strict';
 
+const isNumber = function (num) {
+    return !isNaN(parseFloat(num)) && isFinite(num);
+}
+
 const appData = {
     title: '',
     screens: '',
@@ -11,19 +15,16 @@ const appData = {
     allServicePrices: 0,
     service1: '',
     service2: '',
+
     asking: function () {
         appData.title = prompt("Как называется ваш проект", "Калькулятор верстки");
         appData.screens = prompt("Простые, Сложные, Интерективные", "Простые, сложные");
 
         do {
             appData.screenPrice = +prompt('Сколько будет стоить данная работа');
-        } while (!appData.isNumber(appData.screenPrice));
+        } while (!isNumber(appData.screenPrice));
 
         appData.adaptive = confirm('Нужен ли адвптив на сайте');
-    },
-
-    isNumber: function (num) {
-        return !isNaN(parseFloat(num)) && isFinite(num);
     },
 
     getAllServicePrices: function () {
@@ -39,7 +40,7 @@ const appData = {
 
             do {
                 sum += +prompt('Сколько это будет стоить?');
-            } while (!appData.isNumber(sum));
+            } while (!isNumber(sum));
 
         }
 
@@ -68,19 +69,29 @@ const appData = {
         } else if (price <= 0) {
             return 'Что-то пошло не так';
         }
-    }
+    },
+
+    logger: function () {
+        for (let key in appData) {
+            console.log(key);
+        }
+    },
+    start: function () {
+        appData.asking();
+
+        appData.title = appData.getTitle();
+        appData.allServicePrices = appData.getAllServicePrices();
+        appData.fullPrice = appData.getFullPrice();
+        appData.servicePercentPrice = appData.getServicePercentPrices();
+
+        appData.logger();
+    },
 
 };
 
-appData.asking();
-appData.allServicePrices = appData.getAllServicePrices();
-appData.fullPrice = appData.getFullPrice();
-appData.servicePercentPrice = appData.getServicePercentPrices();
-appData.title = appData.getTitle();
-
-
-console.log(appData.fullPrice);
-console.log(appData.servicePercentPrice);
+appData.start();
+//console.log(appData.fullPrice);
+//console.log(appData.servicePercentPrice);
 //console.log("allServicePrices", allServicePrices);
 //console.log(screens);
 //console.log(getRollbackMessage(fullPrice));
