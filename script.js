@@ -11,16 +11,19 @@ const gameBot = function () {
     function randomNumber() {
         let userNumber = +prompt("Угадай число от 1 до 100");
 
-        if (!isNumber(userNumber)) {
+
+        if (userNumber === 0) {
+            alert("Игра окончена");
+            return userNumber;
+        }
+        else if (!isNumber(userNumber)) {
             alert("Введи число!");
             randomNumber();
-        }
-        else if (confirm(userNumber) === false) {
-            alert("Игра окончена");
         }
         else if (userNumber < 1 || userNumber > 100) {
             randomNumber();
         }
+
         else if (userNumber > mainNumber) {
             alert("Загаданное число меньше");
             randomNumber();
@@ -32,8 +35,6 @@ const gameBot = function () {
         else if (userNumber = mainNumber) {
             alert("Поздравляю, Вы угадали!!!");
         }
-
-        return userNumber;
 
     }
 
