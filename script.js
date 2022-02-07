@@ -1,37 +1,33 @@
 'use strict';
 
-let mainNumber;
-let userNumber;
-
 const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
 }
 
 const gameBot = function () {
-    mainNumber = Math.floor(Math.random() * 101) + 1;
+    let mainNumber = Math.floor(Math.random() * 100) + 1;
     console.log(mainNumber);
 
     function randomNumber() {
-        userNumber = +prompt("Угадай число от 1 до 100");
-
-        if (userNumber === null) {
-            alert("Игра окончена");
-        }
+        let userNumber = +prompt("Угадай число от 1 до 100");
 
         if (!isNumber(userNumber)) {
             alert("Введи число!");
             randomNumber();
         }
 
-        if (userNumber < 1 || userNumber > 100) {
+        if (userNumber === null) {
+            alert("Игра окончена");
+        }
+        else if (userNumber < 1 || userNumber > 100) {
             randomNumber();
         }
         else if (userNumber > mainNumber) {
-            alert("Загаданное число больше");
+            alert("Загаданное число меньше");
             randomNumber();
         }
         else if (userNumber < mainNumber) {
-            alert("Загаданное число меньше");
+            alert("Загаданное число больше");
             randomNumber();
         }
         else if (userNumber = mainNumber) {
@@ -47,8 +43,6 @@ const gameBot = function () {
 
 gameBot();
 
-console.log(userNumber);
-
 // let min = Math.ceil(1);
 // let max = Math.floor(100);
 
@@ -59,7 +53,7 @@ console.log(userNumber);
 
 //     while (true) {
 
-//         let userNumber = prompt("Угадай число от 1 до 100"');
+//         let userNumber = prompt("Угадай число от 1 до 100");
 
 //         if (isNaN(userNumber)) {
 //             alert("Введи число!!!");
@@ -75,9 +69,9 @@ console.log(userNumber);
 //             alert("Поздравляю, Вы угадали");
 //             break;
 //         } else if (parseInt(userNumber) > number) {
-//             alert("Загаданное число больше");
-//         } else if (parseInt(userNumber) < number) {
 //             alert("Загаданное число меньше");
+//         } else if (parseInt(userNumber) < number) {
+//             alert("Загаданное число больше");
 //         }
 //     }
 // }
