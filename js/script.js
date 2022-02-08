@@ -5,10 +5,6 @@ const isNumber = function (num) {
 }
 
 const isString = function (str) {
-    // if (typeof str !== "string") {
-    //     return false
-    // }
-    //return !isNaN(str) && !isNaN(parseFloat(str))
     return !isNaN(str) && isFinite(str);
 }
 
@@ -22,6 +18,7 @@ const appData = {
     servicePercentPrice: 0,
     allServicePrices: 0,
     services: {},
+
     start: function () {
         appData.addValidateString();
         appData.asking();
@@ -32,13 +29,20 @@ const appData = {
 
         appData.logger();
     },
+
+    addValidateString: function () {
+        do {
+            appData.title = prompt("Как называется ваш проект", "Калькулятор верстки");
+        } while (isString(appData.title));
+    },
+
     asking: function () {
         // do {
         // appData.title = prompt("Как называется ваш проект", "Калькулятор верстки");
         // } while (isString(appData.title));
 
         for (let i = 0; i < 2; i++) {
-            let name;
+            let name = '';
             do {
                 let name = prompt("Какие типы экранов нужно разработать?");
             } while (isString(appData.name))
@@ -65,11 +69,6 @@ const appData = {
         appData.adaptive = confirm('Нужен ли адвптив на сайте');
     },
 
-    addValidateString: function () {
-        do {
-            appData.title = prompt("Как называется ваш проект", "Калькулятор верстки");
-        } while (isString(appData.title));
-    },
 
     addPrices: function () {
         for (let screen of appData.screens) {
