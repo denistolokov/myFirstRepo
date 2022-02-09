@@ -45,7 +45,10 @@ const isNumber = function (num) {
 }
 
 const isString = function (str) {
-    return !isNaN(str) && isFinite(str);
+    if (typeof isString !== str)
+        // return false;
+        return !isNaN(str)
+    // && isFinite(str);
 }
 
 const appData = {
@@ -74,19 +77,15 @@ const appData = {
         do {
             appData.title = prompt("Как называется ваш проект", "Калькулятор верстки");
         } while (isString(appData.title));
+
     },
 
     asking: function () {
-        // do {
-        // appData.title = prompt("Как называется ваш проект", "Калькулятор верстки");
-        // } while (isString(appData.title));
-
         for (let i = 0; i < 2; i++) {
-            let name = '';
+            let price = 0
             do {
                 let name = prompt("Какие типы экранов нужно разработать?");
-            } while (isString(appData.name))
-            let price = 0
+            } while (isString(name))
 
             do {
                 price = +prompt('Сколько будет стоить данная работа');
@@ -152,4 +151,4 @@ const appData = {
 
 };
 
-// appData.start();
+appData.start();
