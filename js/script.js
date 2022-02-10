@@ -6,11 +6,8 @@ books[1].after(books[0]);
 books[3].before(books[4]);
 books[5].after(books[2]);
 
-const cloneBooks4 = books[4].cloneNode(true);
-cloneBooks4.classList.add('red-color')
-cloneBooks4.textContent = 'Книга 3. this и Прототипы Объектов'
-// console.log(cloneBooks4);
-// books[4].innerHTML = 'Книга 3. this и Прототипы Объектов'
+const bookNewName = document.querySelectorAll('h2 > a')
+bookNewName[2].textContent = 'Книга 3. this и Прототипы Объектов'
 
 // const backgroundImage = document.querySelector('body')
 // backgroundImage.classList.add('url(./image/adv.jpg)')
