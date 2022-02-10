@@ -6,27 +6,27 @@ books[1].after(books[0]);
 books[3].before(books[4]);
 books[5].after(books[2]);
 
-const bookNewName = document.querySelectorAll('h2 > a')
-bookNewName[2].textContent = 'Книга 3. this и Прототипы Объектов'
+const bookNewName = document.querySelectorAll('h2 > a');
+bookNewName[2].textContent = 'Книга 3. this и Прототипы Объектов';
 
 
-const newOrderInBook = document.querySelectorAll('ul > li')
-newOrderInBook[16].before(newOrderInBook[8])
-newOrderInBook[10].before(newOrderInBook[9, 12])
-newOrderInBook[12].after(newOrderInBook[14])
-newOrderInBook[45].after(newOrderInBook[38])
-newOrderInBook[36].after(newOrderInBook[37])
-newOrderInBook[37].after(newOrderInBook[45])
-newOrderInBook[40].after(newOrderInBook[38])
-newOrderInBook[43].after(newOrderInBook[41])
+const newOrderInBook = document.querySelectorAll('ul > li');
+newOrderInBook[16].before(newOrderInBook[8]);
+newOrderInBook[10].before(newOrderInBook[9, 12]);
+newOrderInBook[12].after(newOrderInBook[14]);
+newOrderInBook[45].after(newOrderInBook[38]);
+newOrderInBook[36].after(newOrderInBook[37]);
+newOrderInBook[37].after(newOrderInBook[45]);
+newOrderInBook[40].after(newOrderInBook[38]);
+newOrderInBook[43].after(newOrderInBook[41]);
 
-const newElement = document.createElement('li')
-newElement.textContent = "Глава 8: За пределами ES6"
-newOrderInBook[55].after(newElement)
+const newElement = document.createElement('li');
+newElement.textContent = "Глава 8: За пределами ES6";
+newOrderInBook[55].after(newElement);
 console.log(newOrderInBook);
 
-const removeMarket = document.querySelector('.adv')
-removeMarket.remove()
+const removeMarket = document.querySelector('.adv');
+removeMarket.remove();
 
 // const backgroundImage = document.querySelector('body')
 
@@ -38,9 +38,6 @@ removeMarket.remove()
 // const newOrderInBookTwo = document.querySelectorAll('newOrderInBook')
 // console.log(newOrderInBookTwo)
 // const newOrderInBookTwo = books[0].cloneNode(true)
-
-// console.log(newOrderInBookTwo);
-
 
 
 
