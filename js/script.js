@@ -6,9 +6,31 @@ books[1].after(books[0]);
 books[3].before(books[4]);
 books[5].after(books[2]);
 
+const cloneBooks4 = books[4].cloneNode(true);
+cloneBooks4.classList.add('red-color')
+cloneBooks4.textContent = 'Книга 3. this и Прототипы Объектов'
+// console.log(cloneBooks4);
+// books[4].innerHTML = 'Книга 3. this и Прототипы Объектов'
 
+// const backgroundImage = document.querySelector('body')
+// backgroundImage.classList.add('url(./image/adv.jpg)')
+// // backgroundImage.textContent('./image/open_book.jpg');
+// const changeBackImage = function () {
+//     backgroundImage.style.backgroundImage = "url('image/adv.jpg')"
+// }
+// // changeBackImage()
+// console.log(backgroundImage);
 
+// backgroundImage.document.body.style.backgroundImage = 'url(./image/open_book.jpg)';
 
+const removeMarket = document.querySelector('.adv')
+removeMarket.remove()
+
+const newOrderInBookTwo = document.querySelector('.book')
+console.log(newOrderInBookTwo);
+
+const newElement = document.createElement('li')
+newElement.textContent = "Глава 8: За пределами ES6"
 
 
 
