@@ -31,15 +31,6 @@ removeMarket.remove();
 // const backgroundImage = document.querySelector('body')
 
 
-// const newOrderInBook = document.querySelectorAll('.book')
-// newOrderInBook.forEach(function (item) {
-//     console.log(item)
-// })
-// const newOrderInBookTwo = document.querySelectorAll('newOrderInBook')
-// console.log(newOrderInBookTwo)
-// const newOrderInBookTwo = books[0].cloneNode(true)
-
-
 
 // const testTitle = document.getElementsByTagName('h1');
 // console.log(testTitle[0]);
