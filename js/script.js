@@ -38,10 +38,11 @@ const appData = {
 
     asking: function () {
         for (let i = 0; i < 2; i++) {
-            let price = 0
-            // do {
-            let name = prompt("Какие типы экранов нужно разработать?");
-            // } while (isString(name))
+            let name = 0;
+            let price = 0;
+            do {
+                name = prompt("Какие типы экранов нужно разработать?");
+            } while (appData.isString(name))
 
             do {
                 price = +prompt('Сколько будет стоить данная работа');
@@ -51,11 +52,11 @@ const appData = {
         }
 
         for (let i = 0; i < 2; i++) {
+            let name = 0;
             let price = 0;
-            // do {
-            let name = prompt('Какой дополнительный тип услуги нужен?');
-            // } while (isString(name));
-
+            do {
+                name = prompt('Какой дополнительный тип услуги нужен?');
+            } while (isString(name));
 
             do {
                 price += +prompt('Сколько это будет стоить?');
