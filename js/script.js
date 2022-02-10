@@ -1,44 +1,56 @@
 'use strict';
 
-const testTitle = document.getElementsByTagName('h1');
-console.log(testTitle[0]);
+const books = document.querySelectorAll('.book');
+console.log(books);
+books[1].after(books[0]);
+books[3].before(books[4]);
+books[5].after(books[2]);
 
-const handlerButton = document.getElementsByClassName('handler_btn');
-console.log(handlerButton);
 
-const screenButton = document.querySelector('screen-btn');
-console.log(screenButton);
 
-const otherItemsPercent = document.querySelectorAll('.other-items.percent');
-otherItemsPercent.forEach(function (item) {
-    console.log(item);
-})
 
-const otherItemsNumber = document.querySelectorAll('.other-items.number');
-otherItemsNumber.forEach(function (item) {
-    console.log(item);
-})
 
-const inputTypeRangel = document.querySelector('.main-controls__views element.main-controls__item rollback.main-controls__range.range')
-console.log(inputTypeRangel);
 
-const inputTypeRange2 = document.querySelector('.main-controls__views element.main-controls__item rollback.main-controls__range.range-value');
-console.log(inputTypeRange2);
 
-const totalInput = document.getElementsByClassName('total-input');
-const imput1 = totalInput[0]
-const imput2 = totalInput[1]
-const imput3 = totalInput[2]
-const imput4 = totalInput[3]
-const imput5 = totalInput[4]
-console.log(imput1);
-console.log(imput2);
-console.log(imput3);
-console.log(imput4);
-console.log(imput5);
+// const testTitle = document.getElementsByTagName('h1');
+// console.log(testTitle[0]);
 
-let screenClass = document.querySelectorAll('.screen');
-console.log(screenClass);
+// const handlerButton = document.getElementsByClassName('handler_btn');
+// console.log(handlerButton);
+
+// const screenButton = document.querySelector('screen-btn');
+// console.log(screenButton);
+
+// const otherItemsPercent = document.querySelectorAll('.other-items.percent');
+// otherItemsPercent.forEach(function (item) {
+//     console.log(item);
+// })
+
+// const otherItemsNumber = document.querySelectorAll('.other-items.number');
+// otherItemsNumber.forEach(function (item) {
+//     console.log(item);
+// })
+
+// const inputTypeRangel = document.querySelector('.main-controls__views element.main-controls__item rollback.main-controls__range.range')
+// console.log(inputTypeRangel);
+
+// const inputTypeRange2 = document.querySelector('.main-controls__views element.main-controls__item rollback.main-controls__range.range-value');
+// console.log(inputTypeRange2);
+
+// const totalInput = document.getElementsByClassName('total-input');
+// const imput1 = totalInput[0]
+// const imput2 = totalInput[1]
+// const imput3 = totalInput[2]
+// const imput4 = totalInput[3]
+// const imput5 = totalInput[4]
+// console.log(imput1);
+// console.log(imput2);
+// console.log(imput3);
+// console.log(imput4);
+// console.log(imput5);
+
+// let screenClass = document.querySelectorAll('.screen');
+// console.log(screenClass);
 
 const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
