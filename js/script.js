@@ -39,9 +39,9 @@ const appData = {
     asking: function () {
         for (let i = 0; i < 2; i++) {
             let price = 0
-            do {
-                let name = prompt("Какие типы экранов нужно разработать?");
-            } while (isString(name))
+            // do {
+            let name = prompt("Какие типы экранов нужно разработать?");
+            // } while (isString(name))
 
             do {
                 price = +prompt('Сколько будет стоить данная работа');
@@ -52,9 +52,9 @@ const appData = {
 
         for (let i = 0; i < 2; i++) {
             let price = 0;
-            do {
-                let name = prompt('Какой дополнительный тип услуги нужен?');
-            } while (isString(name));
+            // do {
+            let name = prompt('Какой дополнительный тип услуги нужен?');
+            // } while (isString(name));
 
 
             do {
@@ -83,7 +83,7 @@ const appData = {
     },
 
     getTitle: function () {
-        appData.title = appData.title.trim()[0].toUpperCase() + appData.title.trim().substr(1).toLowerCase();
+        appData.title = appData.title.trim()[0].toUpperCase() + appData.title.trim().toLowerCase();
     },
 
     getServicePercentPrices: function () {
