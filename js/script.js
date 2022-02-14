@@ -5,8 +5,6 @@ function changeBgImg() {
 }
 
 changeBgImg();
-// backgroundImage.style.backgroundImage = src('./image/you-dont-know-js.jpg');
-
 
 const books = document.querySelectorAll('.book');
 console.log(books);
