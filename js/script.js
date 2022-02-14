@@ -1,4 +1,12 @@
 'use strict';
+const image = document.querySelector('body')
+function changeBgImg() {
+    image.style.backgroundImage = "url('./image/you-dont-know-js.jpg')";
+}
+
+changeBgImg();
+// backgroundImage.style.backgroundImage = src('./image/you-dont-know-js.jpg');
+
 
 const books = document.querySelectorAll('.book');
 console.log(books);
@@ -27,8 +35,6 @@ console.log(newOrderInBook);
 
 const removeMarket = document.querySelector('.adv');
 removeMarket.remove();
-
-// const backgroundImage = document.querySelector('body')
 
 
 
