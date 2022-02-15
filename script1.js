@@ -1,16 +1,17 @@
 'use strick'
 // меняем цвет кнопки через input.
-const buttonColor = document.getElementById("btn");
-const inputChangeColor = document.querySelector('input[type = "text"]');
+const inputText = document.querySelector('input[type = "text"]');
+const btn = document.getElementById("btn");
 const square = document.getElementById("square");
 
-const changeColor = function (event) {
-    square.style.backgroundColor = event.target.value;
-    // buttonColor = event.target.value;
+const changeColor = function () {
+    btn.value = inputText.value;
+    square.style.backgroundColor = btn.value;
 };
+changeColor()
 
-buttonColor.addEventListener("click", changeColor);
-inputChangeColor.addEventListener("input", changeColor);
+btn.addEventListener("click", changeColor);
+square.addEventListener("input", changeColor);
 
 //удаляем кнопку внутри круга.
 const displayButton = document.getElementById("e_btn");
