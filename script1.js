@@ -17,12 +17,13 @@ displayButton.style = "display: none;";
 
 //Меняем height и width circle
 const inputRange = document.querySelector('input[type = "range"]');
-console.log(inputRange);
 const circle = document.querySelector("#circle");
+const radius = document.getElementById("range-span")
 
 const changeWidth = function () {
     circle.style.width = inputRange.value + '%';
     circle.style.height = inputRange.value + '%';
+    radius.innerHTML = inputRange.value + '%';
 };
 changeWidth();
 
