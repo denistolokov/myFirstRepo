@@ -1,12 +1,12 @@
 'use strick'
-// меняем цвет кнопки через input.
+// меняем цвет square через input.
 const inputText = document.querySelector('input[type = "text"]');
 const btn = document.getElementById("btn");
 const square = document.getElementById("square");
 
 const changeColor = function () {
-    btn.value = inputText.value;
-    square.style.backgroundColor = btn.value;
+    let newColor = inputText.value;
+    square.style.background = newColor;
 };
 changeColor()
 
