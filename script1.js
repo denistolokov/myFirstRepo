@@ -2,9 +2,10 @@
 // меняем цвет кнопки через input.
 const buttonColor = document.getElementById("btn");
 const inputChangeColor = document.querySelector('input[type = "text"]');
+const square = document.getElementById("square");
 
 const changeColor = function (event) {
-    buttonColor.style.backgroundColor = event.target.value;
+    square.style.backgroundColor = event.target.value;
 };
 
 buttonColor.addEventListener("click", changeColor);
