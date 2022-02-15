@@ -6,6 +6,7 @@ const square = document.getElementById("square");
 
 const changeColor = function (event) {
     square.style.backgroundColor = event.target.value;
+    // buttonColor = event.target.value;
 };
 
 buttonColor.addEventListener("click", changeColor);
