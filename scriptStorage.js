@@ -5,9 +5,9 @@ const todoCompleted = document.querySelector(".todo-completed");
 
 let toDoData = [];
 
-// const setToStorage = function () {
-//     localStorage.setItem("toDoData", JSON.stringify(toDoData));
-// };
+const setToStorage = function () {
+    localStorage.setItem("toDoData", JSON.stringify(toDoData));
+};
 
 const getFromStorage = function () {
     let res = JSON.parse(localStorage.getItem("toDoData"));
@@ -59,19 +59,19 @@ const render = function () {
     console.log(toDoData);
 };
 
-// todoControl.addEventListener("submit", function (event) {
-//     event.preventDefault();
+todoControl.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-//     const newToDo = {
-//         text: headerInput.value,
-//         completed: false,
-//     };
-//     if (headerInput.value !== "") {
-//         toDoData.push(newToDo);
-//         headerInput.value = "";
-//     }
-//     setToStorage();
-//     render();
-// });
+    const newToDo = {
+        text: headerInput.value,
+        completed: false,
+    };
+    if (headerInput.value !== "") {
+        toDoData.push(newToDo);
+        headerInput.value = "";
+    }
+    setToStorage();
+    render();
+});
 
 render();
