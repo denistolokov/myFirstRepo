@@ -24,7 +24,7 @@ const appData = {
     screens: [],
     screenPrice: 0,
     adaptive: true,
-    rollback: 10,
+    rollback: 0,
     fullPrice: 0,
     servicePercentPrice: 0,
     servicePricesPercent: 0,
@@ -55,16 +55,11 @@ const appData = {
     },
 
     validateScreens: function () {
-        const select = document.querySelector('.select');
-        const input = document.querySelector('.input');
-
-        startBtn.addEventListener('click', function () {
-            if (select.value === null || input.value === 0) {
-                alert("Не выбран тип или количество экранов");
-            } else {
-                appData.start();
-            }
-        })
+        if (appData.screens.find((item) => item.price == 0 && appData.screens.find((item) => item.select == null))) {
+            return true;
+        } else {
+            return false;
+        }
     },
 
     showResult: function () {
