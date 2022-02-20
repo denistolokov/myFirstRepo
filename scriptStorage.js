@@ -11,6 +11,7 @@ const setToStorage = function () {
 
 const getFromStorage = function () {
     let res = JSON.parse(localStorage.getItem("toDoData"));
+
     if (res === null) {
         res = [];
     }
@@ -56,7 +57,7 @@ const render = function () {
         });
     });
 
-    console.log(toDoData);
+    // console.log(toDoData);
 };
 
 todoControl.addEventListener("submit", function (event) {
@@ -66,10 +67,12 @@ todoControl.addEventListener("submit", function (event) {
         text: headerInput.value,
         completed: false,
     };
+
     if (headerInput.value !== "") {
         toDoData.push(newToDo);
         headerInput.value = "";
     }
+
     setToStorage();
     render();
 });
