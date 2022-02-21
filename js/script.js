@@ -75,10 +75,7 @@ const appData = {
         let spanRangeValue = document.querySelector(".rollback").querySelector("span");
 
         spanRangeValue.textContent = inputRange.value + '%';
-        // appData.rollback = spanRangeValue.textContent;
-        totalCountRollback.value = Math.ceil(
-            appData.fullPrice - appData.fullPrice * (inputRange.value / 100)
-        );
+        totalCountRollback.value = appData.fullPrice - appData.fullPrice * (inputRange.value / 100);
     },
 
 
@@ -149,10 +146,7 @@ const appData = {
 
         appData.fullPrice = +appData.screenPrice + appData.servicePricesNumber + appData.servicePricesPercent;
 
-        // appData.servicePercentPrice = appData.fullPrice - (appData.fullPrice * (appData.rollback / 100));
-        appData.servicePercentPrice = Math.ceil(
-            appData.fullPrice - appData.fullPrice * (inputRange.value / 100)
-        );
+        appData.servicePercentPrice = appData.fullPrice - (appData.fullPrice * (inputRange.value / 100));
     },
 
     logger: function () {
