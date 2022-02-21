@@ -36,8 +36,7 @@ const appData = {
     init: function () {
         appData.addTitle();
         startBtn.addEventListener('click', appData.start);
-        startBtn.addEventListener('click', appData.resutlAddScreen),
-            inputRange.addEventListener("input", appData.addRollback);
+        inputRange.addEventListener("input", appData.addRollback);
         buttonPlus.addEventListener('click', appData.addScreenBlock);
     },
 
@@ -47,15 +46,17 @@ const appData = {
 
     start: function () {
         appData.addScreens();
-        appData.addServices();
-        appData.addPrices();
+        if (appData.validateInput() === false) {
+            appData.addServices();
+            appData.addPrices();
 
-        // appData.logger();
-        appData.showResult();
+            // appData.logger();
+            appData.showResult();
+        }
     },
 
-    validateScreens: function () {
-        if (appData.screens.find((item) => item.price == 0 && appData.screens.find((item) => item.select == null))) {
+    validateInput: function () {
+        if (appData.screens.find((item) => item.price == 0)) {
             return true;
         } else {
             return false;
@@ -73,8 +74,11 @@ const appData = {
     addRollback: function () {
         let spanRangeValue = document.querySelector(".rollback").querySelector("span");
 
-        spanRangeValue.textContent = inputRange.value;
-        appData.rollback = spanRangeValue.textContent;
+        spanRangeValue.textContent = inputRange.value + '%';
+        // appData.rollback = spanRangeValue.textContent;
+        totalCountRollback.value = Math.ceil(
+            appData.fullPrice - appData.fullPrice * (inputRange.value / 100)
+        );
     },
 
 
@@ -145,8 +149,10 @@ const appData = {
 
         appData.fullPrice = +appData.screenPrice + appData.servicePricesNumber + appData.servicePricesPercent;
 
-        appData.servicePercentPrice = appData.fullPrice - (appData.fullPrice * (appData.rollback / 100));
-
+        // appData.servicePercentPrice = appData.fullPrice - (appData.fullPrice * (appData.rollback / 100));
+        appData.servicePercentPrice = Math.ceil(
+            appData.fullPrice - appData.fullPrice * (inputRange.value / 100)
+        );
     },
 
     logger: function () {
