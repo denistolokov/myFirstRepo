@@ -36,24 +36,13 @@ const appData = {
     init: function () {
         this.addTitle();
         startBtn.addEventListener('click', this.start.bind(this));
-        // resetBtn.addEventListener('click', this.reset.bind(this));
+        resetBtn.addEventListener('click', this.reset.bind(this));
         inputRange.addEventListener("input", this.addRollback.bind(this));
         buttonPlus.addEventListener('click', this.addScreenBlock.bind(this));
     },
 
     addTitle: function () {
         document.title = title.textContent;
-    },
-
-    start: function () {
-        appData.addScreens();
-        if (this.validateInput() === false) {
-            this.addServices();
-            this.addPrices();
-
-            // appData.logger();
-            this.showResult();
-        }
     },
 
     validateInput: function () {
@@ -76,7 +65,6 @@ const appData = {
         let spanRangeValue = document.querySelector(".rollback").querySelector("span");
 
         spanRangeValue.textContent = inputRange.value + '%';
-        // console.log(spanRangeValue)
         totalCountRollback.value =
             this.fullPrice - this.fullPrice * (inputRange.value / 100);
     },
@@ -155,12 +143,85 @@ const appData = {
             this.fullPrice - (this.fullPrice * (inputRange.value / 100));
     },
 
-    logger: function () {
-        // console.log(appData.fullPrice);
-        // console.log(appData.servicePercentPrice);
-        // console.log(appData.screens);
+    disabledElam: function () {
+        const select = document.querySelectorAll('.screen select');
+        select.forEach((item) => {
+            item.disabled = !item.disabled;
+        });
+
+        const input = document.querySelectorAll('.screen input[type=text]');
+        input.forEach((item) => {
+            item.disabled = !item.disabled;
+        });
     },
 
+    disabledButton: function () {
+        startBtn.style.display = 'none';
+        resetBtn.style.display = 'block';
+    },
+
+    disabledButtonText: function () {
+        startBtn.style.display = 'block';
+        resetBtn.style.display = 'none';
+    },
+
+    resetInputValue: function () {
+        const input = document.querySelectorAll('.screen input[type=text]');
+        input.forEach((item) => {
+            item.value = "";
+        });
+
+        const select = document.querySelectorAll('.screen select')
+        select.forEach((item) => {
+            item.options.selectedIndex = 0;
+        });
+
+        const total = document.querySelectorAll('.total-input')
+        total.forEach((item) => {
+            item.value = "0";
+        });
+        const check = document.querySelectorAll('input[type=checkbox]')
+        check.forEach((item) => {
+            item.checked = false;
+        });
+
+        inputRange.value = 0;
+        inputRangeValue.textContent = inputRange.value + "%";
+
+        for (let i = 1; i < screens.length; i++) {
+            screens[i].remove();
+        };
+    },
+
+    start: function () {
+        appData.addScreens();
+        if (this.validateInput() === false) {
+            this.addServices();
+            this.addPrices();
+            this.showResult();
+            this.disabledElam();
+            this.disabledButton();
+
+            // appData.logger();
+        }
+    },
+
+    reset: function () {
+        this.resetInputValue();
+        this.disabledElam();
+        this.disabledButtonText();
+
+        this.addScreens();
+    },
+
+    // logger: function () {
+    //     // console.log(appData.fullPrice);
+    //     // console.log(appData.servicePercentPrice);
+    //     // console.log(appData.screens);
+    // },
+
 };
+
+
 
 appData.init();
